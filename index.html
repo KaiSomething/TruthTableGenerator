@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Truth Table Generator</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <input id="equation" spellcheck="false" type="text", value="¬p ∧ (p → q)">
+
+    <span id="error">There is an error in this statement.</span>
+
+    <table id="table">
+        <tr>
+            <th>p</th>
+            <th>q</th>
+            <th>p ∧ q</th>
+        </tr>
+        <tr>
+            <td class="false">T</td>
+            <td class="false">T</td>
+            <td class="false">T</td>
+        </tr>
+        <tr>
+            <td class="false">T</td>
+            <td class="true">F</td>
+            <td class="false">T</td>
+        </tr>
+        <tr>
+            <td class="true">F</td>
+            <td class="false">T</td>
+            <td class="false">T</td>
+        </tr>
+        <tr>
+            <td class="true">F</td>
+            <td class="true">F</td>
+            <td class="true">F</td>
+        </tr>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
