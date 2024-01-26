@@ -4,7 +4,7 @@ const table = document.getElementById("table");
 
 const operation_priority = [
     ["\u2192", "\u2194"],
-    ["\u2227", "\u2228"],
+    ["\u2227", "\u2228", "\u22BC"],
     ["\u00AC"]
 ];
 
@@ -12,6 +12,7 @@ const symbols = {
     "\u2192": ["implies", "to", "->", "=>"],
     "\u2194": ["equals", "<->", "="],
     "\u00AC": ["not", "!", "~"],
+    "\u22BC": ["nand"],
     "\u2227": ["and", "&"],
     "\u2228": ["or", "|"]
 };
@@ -20,6 +21,7 @@ const operation_names = {
     "\u2192": "implies",
     "\u2194": "equals",
     "\u00AC": "not",
+    "\u22BC": "nand",
     "\u2227": "and",
     "\u2228": "or"
 }
@@ -155,6 +157,9 @@ function run_tree(values, tree){
         }
         if(tree.operation == "and"){
             return a && b;
+        }
+        if(tree.operation == "nand"){
+            return a(a && b);
         }
         if(tree.operation == "equals"){
             return (a == b);
