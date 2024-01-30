@@ -1,5 +1,5 @@
 body{
-    font-family: 'Times New Roman', Times, serif;
+    font-family: arial, sans-serif;
 }
 
 #equation{
@@ -49,4 +49,42 @@ td, th {
 
 .true{
     background-color: rgb(255, 255, 255);
+}
+
+#tooltip {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: all 0.1s;
+    font-family: monospace;
+    overflow: hidden;
+}
+
+#tooltip:hover {
+    width: 180px;
+    height: 130px;
+    padding: 10px;
+}
+
+.question {
+    position: absolute;
+    top: 1px;
+    left: 6px;
+    transition: all 0.2s;
+}
+
+#tooltip:hover > .question {
+    transform: translate(-20px, 0);
+}
+
+#tooltip > h1 {
+    text-align: center;
+    margin-top: 0px;
+    margin-left: 20px;
 }
